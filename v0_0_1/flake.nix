@@ -9,13 +9,14 @@
   
   inputs.src-zfdbms-v0_0_1.flake = false;
   inputs.src-zfdbms-v0_0_1.owner = "zendbit";
-  inputs.src-zfdbms-v0_0_1.ref   = "refs/tags/v0.0.1";
+  inputs.src-zfdbms-v0_0_1.ref   = "v0_0_1";
   inputs.src-zfdbms-v0_0_1.repo  = "nim.zfdbms";
   inputs.src-zfdbms-v0_0_1.type  = "github";
   
   inputs."stdext".owner = "nim-nix-pkgs";
   inputs."stdext".ref   = "master";
   inputs."stdext".repo  = "stdext";
+  inputs."stdext".dir   = "";
   inputs."stdext".type  = "github";
   inputs."stdext".inputs.nixpkgs.follows = "nixpkgs";
   inputs."stdext".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
