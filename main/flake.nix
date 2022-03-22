@@ -8,8 +8,8 @@
   inputs.flakeNimbleLib.inputs.nixpkgs.follows = "nixpkgs";
   
   inputs.src-zfdbms-main.flake = false;
+  inputs.src-zfdbms-main.ref   = "refs/heads/main";
   inputs.src-zfdbms-main.owner = "zendbit";
-  inputs.src-zfdbms-main.ref   = "main";
   inputs.src-zfdbms-main.repo  = "nim.zfdbms";
   inputs.src-zfdbms-main.type  = "github";
   
