@@ -7,11 +7,11 @@
   inputs.flakeNimbleLib.type  = "github";
   inputs.flakeNimbleLib.inputs.nixpkgs.follows = "nixpkgs";
   
-  inputs.src-zfdbms-v0_0_5.flake = false;
-  inputs.src-zfdbms-v0_0_5.ref   = "refs/tags/v0.0.5";
-  inputs.src-zfdbms-v0_0_5.owner = "zendbit";
-  inputs.src-zfdbms-v0_0_5.repo  = "nim.zfdbms";
-  inputs.src-zfdbms-v0_0_5.type  = "github";
+  inputs.src-zfdbms-v0_0_9.flake = false;
+  inputs.src-zfdbms-v0_0_9.ref   = "refs/tags/v0.0.9";
+  inputs.src-zfdbms-v0_0_9.owner = "zendbit";
+  inputs.src-zfdbms-v0_0_9.repo  = "nim.zfdbms";
+  inputs.src-zfdbms-v0_0_9.type  = "github";
   
   inputs."stdext".owner = "nim-nix-pkgs";
   inputs."stdext".ref   = "master";
@@ -24,13 +24,13 @@
   outputs = { self, nixpkgs, flakeNimbleLib, ...}@deps:
   let 
     lib  = flakeNimbleLib.lib;
-    args = ["self" "nixpkgs" "flakeNimbleLib" "src-zfdbms-v0_0_5"];
+    args = ["self" "nixpkgs" "flakeNimbleLib" "src-zfdbms-v0_0_9"];
     over = if builtins.pathExists ./override.nix 
            then { override = import ./override.nix; }
            else { };
   in lib.mkRefOutput (over // {
     inherit self nixpkgs ;
-    src  = deps."src-zfdbms-v0_0_5";
+    src  = deps."src-zfdbms-v0_0_9";
     deps = builtins.removeAttrs deps args;
     meta = builtins.fromJSON (builtins.readFile ./meta.json);
   } );
